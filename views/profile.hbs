@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="/style.css">
+        <title>Selling.com</title>
+    </head>
+    <body>
+        <nav>
+            <h4>Selling.com</h4>
+            <ul>
+                <li><a href="/home">The Second-hand Market</a></li>
+                <li><a href="/sell">Sell Something</a></li>
+                <li><a href="/favourite">Your favourite</a></li>
+                <li><a href="/profile">Your Profile: {{#if username}}{{username}}{{/if}} </a></li>
+            </ul>
+        </nav>
+
+        <div class="container mt-4">
+            <div class="card">
+                <div class="card-header">
+                Your Profile
+                </div>
+                <div class="card-body">
+                    <form action="/auth/updateUsername" method="POST">
+                        <div class="form-group">
+                          <label for="name">Username: {{username}}</label>
+                          <input type="text" class="form-control" id="name" name="name">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Change Username</button>
+                    </form>    
+                    <p><br /></p>
+                    <div class="form-group">
+                        <label for="phone">Mobile Number: {{phone}}</label>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address: {{email}}</label>
+                    </div>
+                    
+                    <p><br /></p>
+                    <p><br /></p>
+                    <form action="/auth/updatePassword" method="POST">
+                        <div class="form-group">
+                            Change Password
+                            <p><br /></p>
+                            <label for="oldPassword">
+                                Old Password
+                                <input type="password" class="form-control" id="name" name="oldPassword">
+                            </label>
+                            <p><br /></p>
+                            <label for="newPassword">
+                                New Password
+                                <input type="password" class="form-control" id="name" name="newPassword">
+                            </label>
+                            <label for="confirmPassword">
+                                Confirm Password
+                                <input type="password" class="form-control" id="name" name="confirmPassword">
+                            </label>
+                            <p><br /></p>
+                            <button type="submit" class="btn btn-primary">Change password</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <p><br /></p>
+            <p><br /></p>
+            <h3><a href="/logout">Log out</a></h3>
+            <p><br /></p>
+            <p><br /></p>
+		</div>
+        <div id="footer">
+		    <div class="background">
+				<p class="footnote">
+					&copy; Copyirght &copy; 2021. <a href="/home">Selling.com</a> all rights reserved.
+				</p>
+            </div>
+		</div>
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    </body>
+</html>
